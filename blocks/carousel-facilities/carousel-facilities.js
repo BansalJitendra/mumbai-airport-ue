@@ -77,7 +77,10 @@ function createSlide(row, slideIndex, carouselId) {
   slide.setAttribute('id', `carousel-facilities-${carouselId}-slide-${slideIndex}`);
   slide.classList.add('carousel-facilities-slide');
 
-  row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
+  const columns = [...row.querySelectorAll(':scope > div')];
+  // UE renders 2 cells [image, content]; local preview has 3 [item-name, image, content]
+  if (columns.length > 2) columns.shift().remove();
+  columns.forEach((column, colIdx) => {
     column.classList.add(`carousel-facilities-slide-${colIdx === 0 ? 'image' : 'content'}`);
     slide.append(column);
   });

@@ -11,29 +11,26 @@ export default async function decorate(block) {
   tablist.setAttribute('role', 'tablist');
   tablist.id = `tablist-${tabBlockCnt += 1}`;
 
-  // each row has: cell 0 = item name ("Tab"), cell 1 = title ("Services"), cell 2 = content
   const rows = [...block.children];
 
   rows.forEach((row, i) => {
     const cells = [...row.children];
-    const itemNameCell = cells[0]; // "Tab"
-    const titleCell = cells[1]; // "Services" or "Facilities"
+    // UE renders 2 cells [title, content]; local preview has 3 [item-name, title, content]
+    const hasItemName = cells.length > 2;
+    const itemNameCell = hasItemName ? cells[0] : null;
+    const titleCell = hasItemName ? cells[1] : cells[0];
     const id = `tabpanel-${tabBlockCnt}-tab-${i + 1}`;
 
-    // decorate tabpanel
     row.className = 'tabs-services-panel';
     row.id = id;
     row.setAttribute('aria-hidden', !!i);
     row.setAttribute('aria-labelledby', `tab-${id}`);
     row.setAttribute('role', 'tabpanel');
 
-    // build tab button using title cell content
     const button = document.createElement('button');
     button.className = 'tabs-services-tab';
     button.id = `tab-${id}`;
-
     button.textContent = titleCell ? titleCell.textContent.trim() : `Tab ${i + 1}`;
-
     button.setAttribute('aria-controls', id);
     button.setAttribute('aria-selected', !i);
     button.setAttribute('role', 'tab');
@@ -50,18 +47,14 @@ export default async function decorate(block) {
       button.setAttribute('aria-selected', true);
     });
 
-    // transfer UE instrumentation from title cell to the button
-    if (titleCell) moveInstrumentation(titleCell, button);
-
-    // add the new tab list button, to the tablist
+    moveInstrumentation(titleCell, button);
     tablist.append(button);
 
-    // remove item name and title cells from the panel, keeping only the content cell
     if (itemNameCell) {
       moveInstrumentation(itemNameCell, null);
       itemNameCell.remove();
     }
-    if (titleCell) titleCell.remove();
+    titleCell.remove();
   });
 
   block.prepend(tablist);

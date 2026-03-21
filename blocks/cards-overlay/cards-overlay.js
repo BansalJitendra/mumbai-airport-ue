@@ -8,6 +8,8 @@ export default function decorate(block) {
     const li = document.createElement('li');
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
+    // UE renders 2 cells [image, text]; local preview has 3 [item-name, image, text]
+    if (li.children.length > 2) li.firstElementChild.remove();
     [...li.children].forEach((div) => {
       if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-overlay-card-image';
       else div.className = 'cards-overlay-card-body';
