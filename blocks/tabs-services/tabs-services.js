@@ -1,6 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 // keep track globally of the number of tab blocks on the page
 let tabBlockCnt = 0;
 
@@ -11,28 +8,28 @@ export default async function decorate(block) {
   tablist.setAttribute('role', 'tablist');
   tablist.id = `tablist-${tabBlockCnt += 1}`;
 
-  // the first cell of each row is the title of the tab
-  const tabHeadings = [...block.children]
-    .filter((child) => child.firstElementChild && child.firstElementChild.children.length > 0)
-    .map((child) => child.firstElementChild);
+  // each row has: cell 0 = item name ("Tab"), cell 1 = title ("Services"), cell 2 = content
+  const rows = [...block.children];
 
-  tabHeadings.forEach((tab, i) => {
+  rows.forEach((row, i) => {
+    const cells = [...row.children];
+    const itemNameCell = cells[0]; // "Tab"
+    const titleCell = cells[1]; // "Services" or "Facilities"
     const id = `tabpanel-${tabBlockCnt}-tab-${i + 1}`;
 
     // decorate tabpanel
-    const tabpanel = block.children[i];
-    tabpanel.className = 'tabs-services-panel';
-    tabpanel.id = id;
-    tabpanel.setAttribute('aria-hidden', !!i);
-    tabpanel.setAttribute('aria-labelledby', `tab-${id}`);
-    tabpanel.setAttribute('role', 'tabpanel');
+    row.className = 'tabs-services-panel';
+    row.id = id;
+    row.setAttribute('aria-hidden', !!i);
+    row.setAttribute('aria-labelledby', `tab-${id}`);
+    row.setAttribute('role', 'tabpanel');
 
-    // build tab button
+    // build tab button using title cell content
     const button = document.createElement('button');
     button.className = 'tabs-services-tab';
     button.id = `tab-${id}`;
 
-    button.innerHTML = tab.innerHTML;
+    button.textContent = titleCell ? titleCell.textContent.trim() : `Tab ${i + 1}`;
 
     button.setAttribute('aria-controls', id);
     button.setAttribute('aria-selected', !i);
@@ -46,20 +43,16 @@ export default async function decorate(block) {
       tablist.querySelectorAll('button').forEach((btn) => {
         btn.setAttribute('aria-selected', false);
       });
-      tabpanel.setAttribute('aria-hidden', false);
+      row.setAttribute('aria-hidden', false);
       button.setAttribute('aria-selected', true);
     });
 
     // add the new tab list button, to the tablist
     tablist.append(button);
 
-    // remove the tab heading from the dom, which also removes it from the UE tree
-    tab.remove();
-
-    // remove the instrumentation from the button's h1, h2 etc (this removes it from the tree)
-    if (button.firstElementChild) {
-      moveInstrumentation(button.firstElementChild, null);
-    }
+    // remove item name and title cells from the panel, keeping only the content cell
+    if (itemNameCell) itemNameCell.remove();
+    if (titleCell) titleCell.remove();
   });
 
   block.prepend(tablist);
