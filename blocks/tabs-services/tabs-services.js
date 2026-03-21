@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-unresolved
+import { moveInstrumentation } from '../../scripts/scripts.js';
+
 // keep track globally of the number of tab blocks on the page
 let tabBlockCnt = 0;
 
@@ -47,11 +50,17 @@ export default async function decorate(block) {
       button.setAttribute('aria-selected', true);
     });
 
+    // transfer UE instrumentation from title cell to the button
+    if (titleCell) moveInstrumentation(titleCell, button);
+
     // add the new tab list button, to the tablist
     tablist.append(button);
 
     // remove item name and title cells from the panel, keeping only the content cell
-    if (itemNameCell) itemNameCell.remove();
+    if (itemNameCell) {
+      moveInstrumentation(itemNameCell, null);
+      itemNameCell.remove();
+    }
     if (titleCell) titleCell.remove();
   });
 
