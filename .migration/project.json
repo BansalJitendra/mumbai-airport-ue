@@ -1,0 +1,10 @@
+{
+  "type": "xwalk",
+  "contentHostUrl": "https://author-p121857-e1908603.adobeaemcloud.com",
+  "aemSitePath": "/content/mumbai-airport",
+  "aemAssetsFolderPath": "/content/dam/mumbai-airport",
+  "aemSiteName": "mumbai-airport",
+  "aemSiteTitle": "Mumbai Airport",
+  "baseUrl": "https://csmia-mumbai.adaniairports.com",
+  "libraryUrl": "https://main--mumbai-airport-ue--bansaljitendra.aem.page/tools/sidekick/library.json"
+}

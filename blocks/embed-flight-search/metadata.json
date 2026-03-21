@@ -1,0 +1,39 @@
+{
+  "variantName": "embed-flight-search",
+  "baseBlock": "embed",
+  "version": "1.0.0",
+  "created": "2026-03-20T14:40:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://csmia-mumbai.adaniairports.com",
+    "originPage": "CSMIA Mumbai Airport homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "flight-search-widget",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "embedded interactive flight search widget",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "airport homepages with flight search",
+      "travel portal landing pages",
+      "interactive widget embedding"
+    ],
+    "notSuitableFor": [
+      "video embeds",
+      "social media embeds",
+      "static content pages"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-20T14:40:00.000Z"
+  }
+}

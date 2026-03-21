@@ -115,6 +115,36 @@
           }
         },
         {
+          "title": "Cards Overlay",
+          "id": "cards-overlay",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Cards Overlay",
+                  "filter": "cards-overlay"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Cards Overlay Item",
+          "id": "cards-overlay-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Card",
+                  "model": "cards-overlay-item"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Cards",
           "id": "cards",
           "plugins": {
@@ -145,6 +175,36 @@
           }
         },
         {
+          "title": "Carousel Facilities",
+          "id": "carousel-facilities",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Carousel Facilities",
+                  "filter": "carousel-facilities"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Carousel Facilities Slide",
+          "id": "carousel-facilities-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Carousel Facilities Slide",
+                  "model": "carousel-facilities-item"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Carousel",
           "id": "carousel",
           "plugins": {
@@ -153,7 +213,6 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Carousel",
-                  "model": "carousel",
                   "filter": "carousel"
                 }
               }
@@ -176,6 +235,21 @@
           }
         },
         {
+          "title": "Columns Feature",
+          "id": "columns-feature",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Columns",
           "id": "columns",
           "plugins": {
@@ -185,6 +259,21 @@
                 "template": {
                   "columns": "2",
                   "rows": "1"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Embed Flight Search",
+          "id": "embed-flight-search",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Embed Flight Search",
+                  "model": "embed-flight-search"
                 }
               }
             }
@@ -377,6 +466,39 @@
                   "column2text": "Column2",
                   "column3text": "Column3",
                   "column4text": "Column4"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tabs Services",
+          "id": "tabs-services",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Tabs Services",
+                  "model": "tabs-services",
+                  "filter": "tabs-services"
+                }
+              }
+            }
+          }
+        },
+        {
+          "title": "Tabs Services Item",
+          "id": "tabs-services-item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Tab",
+                  "model": "tabs-services-item",
+                  "title": "Tab Name",
+                  "content_headingType": "h3"
                 }
               }
             }

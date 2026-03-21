@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-facilities",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-20T14:40:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://csmia-mumbai.adaniairports.com",
+    "originPage": "CSMIA Mumbai Airport homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "facilities-showcase",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "horizontal carousel with image cards containing title + description + link",
+    "buttonCount": 5,
+    "imageCount": 5
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "airport facility showcases",
+      "feature highlight carousels",
+      "image card sliders with text overlay"
+    ],
+    "notSuitableFor": [
+      "simple image galleries",
+      "text-only content",
+      "single-slide layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-20T14:40:00.000Z"
+  }
+}

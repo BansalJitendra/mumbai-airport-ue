@@ -1,0 +1,127 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://csmia-mumbai.adaniairports.com/",
+        "https://csmia-mumbai.adaniairports.com"
+      ],
+      "description": "CSMIA Mumbai Airport homepage - main landing page for the airport website",
+      "blocks": [
+        {
+          "name": "embed-flight-search",
+          "instances": [
+            "section.searchFlightSection .searchFlightInner"
+          ]
+        },
+        {
+          "name": "tabs-services",
+          "instances": [
+            "section.serviceInformationSection .serviceInformationContainer"
+          ]
+        },
+        {
+          "name": "carousel-facilities",
+          "instances": [
+            "section.airportSection .airportinnerSection .contentRightBlock .airportSlider"
+          ]
+        },
+        {
+          "name": "cards-overlay",
+          "instances": [
+            "section.shopDineSection .cardsSetion"
+          ]
+        },
+        {
+          "name": "columns-feature",
+          "instances": [
+            "section.experienceAirportSection .slideBlock"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Banner",
+          "selector": "section.bannerSection.homepagebanner",
+          "style": "dark",
+          "blocks": [],
+          "defaultContent": [
+            "section.bannerSection .bannerImage img"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Flight Search",
+          "selector": "section.searchFlightSection",
+          "style": null,
+          "blocks": [
+            "embed-flight-search"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Services and Facilities",
+          "selector": "section.serviceInformationSection",
+          "style": null,
+          "blocks": [
+            "tabs-services"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Welcome Text",
+          "selector": "section.airportDetailsSection",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".aboutServiceSection .headingTitle",
+            ".aboutServiceSection p"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Airport Facilities",
+          "selector": "section.airportSection",
+          "style": null,
+          "blocks": [
+            "carousel-facilities"
+          ],
+          "defaultContent": [
+            ".airportinnerSection .contentLeftBlock h2",
+            ".airportinnerSection .contentLeftBlock p"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Shop and Dine",
+          "selector": "section.shopDineSection",
+          "style": null,
+          "blocks": [
+            "cards-overlay"
+          ],
+          "defaultContent": [
+            ".shopDineSection .titleSection h2",
+            ".shopDineSection .titleSection p",
+            ".shopDineSection .titleSection .outlinedButton"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Experiences at CSMIA",
+          "selector": "section.experienceAirportSection",
+          "style": null,
+          "blocks": [
+            "columns-feature"
+          ],
+          "defaultContent": [
+            ".experienceAirportSection .titleSection h2",
+            ".experienceAirportSection .titleSection p"
+          ]
+        }
+      ]
+    }
+  ]
+}

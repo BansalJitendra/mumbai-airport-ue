@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-overlay",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-20T14:40:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://csmia-mumbai.adaniairports.com",
+    "originPage": "CSMIA Mumbai Airport homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "shop-dine-showcase",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "image cards with overlay text showing category name + description + link",
+    "buttonCount": 3,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "shop and dine category showcases",
+      "overlay text image cards",
+      "category navigation with full-bleed images"
+    ],
+    "notSuitableFor": [
+      "simple text cards",
+      "icon-based cards",
+      "list-style layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-20T14:40:00.000Z"
+  }
+}

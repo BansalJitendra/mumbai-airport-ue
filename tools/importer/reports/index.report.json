@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://csmia-mumbai.adaniairports.com/",
+  "path": "index",
+  "timestamp": "2026-03-21T08:02:05.629Z",
+  "title": "Mumbai International Airport (BOM) | Chhatrapati Shivaji Maharaj International Airport",
+  "template": "homepage",
+  "blocks": [
+    "embed-flight-search",
+    "tabs-services",
+    "carousel-facilities",
+    "cards-overlay",
+    "columns-feature"
+  ]
+}

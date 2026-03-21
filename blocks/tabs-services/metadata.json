@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-services",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-03-20T14:40:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://csmia-mumbai.adaniairports.com",
+    "originPage": "CSMIA Mumbai Airport homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "services-facilities-tabs",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "tabbed panels with icon link grids",
+    "buttonCount": 0,
+    "imageCount": 12
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "airport services and facilities pages",
+      "tabbed content with icon grids",
+      "categorized service listings"
+    ],
+    "notSuitableFor": [
+      "simple text tabs",
+      "FAQ-style content",
+      "single-panel layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-03-20T14:40:00.000Z"
+  }
+}
