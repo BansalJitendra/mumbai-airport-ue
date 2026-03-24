@@ -607,6 +607,10 @@
     ]
   },
   {
+    "id": "tabs-services",
+    "fields": []
+  },
+  {
     "id": "tabs-services-item",
     "fields": [
       {
